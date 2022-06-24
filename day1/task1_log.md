@@ -49,7 +49,7 @@ text-align : center
 
 **できた！**
 
-# 画像には上下左右にマージンを設定する
+# 画像には上下左右にマージンを設定
 ## 💡CSSの余白の考え方
 参考）https://saruwakakun.com/html-css/basic/margin-padding#section1
 CSSでは要素のまわりの余白をmargin（マージン）とpadding（パディング）というプロパティで指定します。
