@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dojo</title>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+header {
+  background-color: #1aaedb;
+  border-bottom: #ead963 6px solid;
+}
+.container {
+  padding: 16px;
+  padding-left: 120px;
+}
+header h1,
+header h2 {
+  margin: 0;
+  color: #fff;
+  line-height: 1;
+}
+header h1 {
+  padding: 30px 0 5px 0;
+  font-size: 24px;
+  border-bottom: 1px dotted #fff;
+  font-weight: 500;
+}
+header h2 {
+  padding: 6px 0 0 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <h1>kintone dojo</h1>
+    <h2>JavaScript講義</h2>
+  </div>
+</header>
+<main class="container">
+  <p id="title"></p>
+  <p id="actor"></p>
+  <p id="place"></p>
+  <p id="details"></p>
+</main>
+<script>
+  'use strict'
+  const weekDay =['日','月','火','水','木','金','土'];
+  for (let i = 1; i <= 100; i++)  {
+    console.log(i);
+  }
+
+  for (let i = 0; i<=6; i++) {
+    console.log(weekDay[i]);
+  }
+
+  //↑これだと新しい曜日追加に対応できないので同数分出すには以下のようにする
+
+  for (let i = 0; i<=weekDay.length; i++) {
+    console.log(weekDay[i]);
+  }
+
+  weekDay.forEach((day) => {
+    console.log(day)
+  });
+
+
+  //↓オブジェクトのループ処理
+  const eventInfo = {
+    title: '「ごうさんとあそぼ」',
+    actor: 'GO皆川',
+    place:'ティアラこうとう',
+    detail: 'GO皆川が踊ります',
+  }
+
+  //const keys = Object.keys(eventInfo);
+  //keys.forEach((key) => {
+  //  console.log(eventInfo[key]);
+  //});
+
+  keys.forEach((key) => {
+    document.getElementById('title').textContent = eventInfo[key];
+  });
+
+  document.getElementById('title').textContent; = eventInfo.title;
+  document.getElementById('actor').textContent; = eventInfo.actor;
+  document.getElementById('place').textContent; = eventInfo.place;
+  document.getElementById('detail').textContent; = eventInfo.detail;
+
+
+</script>
+</body>
+</html>
