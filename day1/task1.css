@@ -1,30 +1,30 @@
 /* ここに記載する */
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
-img{
+img {
   width : 80vw;
   margin: 10px;
 }
 
-.sehin{
+.sehin {
   text-align : center
 }
 
-.kintone{
+.kintone {
   background-color: #ffbf00;
 }
 
-.office{
+.office {
   background-color: #1992d4;
 }
 
-.garoon{
+.garoon {
   background-color: #003399;
 }
 
-.mail{
+.mail {
   background-color: #df4356;
 }
 
