@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>dojo</title>
+<title>dojo課題</title>
 <style>
 html, body {
   height: 100%;
@@ -35,6 +35,7 @@ header h2 {
   font-weight: 400;
 }
 </style>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 </head>
 <body>
 <header>
@@ -44,19 +45,30 @@ header h2 {
   </div>
 </header>
 <main class="container">
+  <p>現在時刻：<div id="time"></div></p>
 </main>
 <script>
-  'use strict';
+'use strict';
 
-  const person = {
-    name: 'John',
-    age: 23,
-    country:'India'
-  };
+setInterval(() => {
 
-  console.log(person.country);
-  console.log(person.name);
-  console.log(person['country'])
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const date =today.getDate();
+  const day = today.getDay();
+  
+  //const show =`${year}年${month}月${date}日${day}曜日`
+  //これだと曜日が数字なので修正
+
+  const show =`${year}年${month}月${date}日(weekDay[${day}])曜日`
+  
+  document.getElementById('time').textContent = show;
+}, 1000);
+
+const today2 = dayjs();
+const format = today2.format('YYYY-MM-DD HH:mm:ss');
+console.log(format);
 
 </script>
 </body>
