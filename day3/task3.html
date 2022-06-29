@@ -92,13 +92,13 @@ li {
 <script>
   'use strict';
   //▼⼿順3-1
-  const fileManage ={
+  const fileManage = {
     f001: {
       folderName: '情報システム部',
       viewAuth: 'Everyone',
       editAuth: '情報システム部',
       deleteAuth: '情報システム部',
-    }, 
+    },
     f002: {
       folderName: '経営管理部',
       viewAuth: '経営管理部',
@@ -110,27 +110,28 @@ li {
       viewAuth: 'Everyone',
       editAuth: '営業部',
       deleteAuth: '営業部',
-    },};
+    }
+  };
 
   console.log(fileManage);
 
   //▼手順3-2
-  const fileAr = Object.keys(fileManage)
-  fileAr.forEach((key) => {
-    const fileAr2 = Object.keys(fileManage[key]);
-    fileAr2.forEach((key2) => {
-      const ID = key + '-' + key2
-      document.getElementById(ID).textContent = fileManage[key][key2]
+  Object.keys(fileManage).forEach((key) => {
+    Object.keys(fileManage[key]).forEach((key2) => {
+      //const id = key + '-' + key2
+      //document.getElementById(id).textContent = fileManage[key][key2];
+      document.getElementById(`${key}-${key2}`).textContent = fileManage[key][key2];
     });
 
     //▼⼿順3-3
     //オブジェクト内オブジェクトのviewAuthのプロパティ値が「Everyone」の時、
     //そのオブジェクト内オブジェクトのfolderNameのプロパティ値を選び、listにリスト表示する。
     if (fileManage[key]['viewAuth'] === 'Everyone') {
-      const li = document.createElement('li');
-      li.innerHTML = fileManage[key]['folderName'];
-      list.appendChild(li);
-  };});
+      const li = document.createElement('li')
+      li.innerHTML = fileManage[key]['folderName']
+      list.appendChild(li)
+    }
+  });
   
 </script>
 </body>
