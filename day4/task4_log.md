@@ -6,10 +6,55 @@
 
 JSでは`document.getElementById(””).value`で取り出せる
 
-## 「もしチェックボックスが押されたら…」はどう表現する？
-参考）https://techacademy.jp/magazine/28425
-> チェックボックスは複数の選択を行うような場合に使用します。そのためチェックボックスを使用する際は以下のようにするのが一般的です。
-> - HTMLで複数のチェックボックスに同じ「name」属性を指定する
-> - JavaScriptでは「getElementsByName」関数でチェックボックス要素を取得する
-> - for文などの繰り返し構文で順番にチェックされているか評価を行う
+## 課題スクリプト壁打ち
+### 1. 「チェックボックスが押されたら…」がわからないし、setIntervalで毎回確認させてみる
+```
+// if内で作った関数はif外に出せないのでif外で定義
+// setInterval内で設定すると1秒ごとに0に戻っちゃうのでsetInterval外で定義
+// 変数の数値を変更するので`const`でなく`let`で定義
+let secure = 0;
+let disk =0;
 
+setInterval(() => {
+
+    if (document.getElementsByClassName('chk')[0].checked) {
+      secure = document.getElementsByClassName('chk')[0].value * 5
+    } else {
+      secure = 0
+    };
+
+    if (document.getElementsByClassName('chk')[1].checked) {
+      disk = document.getElementsByClassName('chk')[1].value * 1
+    } else {
+      disk = 0
+    };
+
+    document.getElementById('price').textContent = 3900 + secure + disk;
+
+  }, 1);
+  ```
+一応問題なく動いた！！
+
+💬「『マウスイベント』って言うのがあって、これを使えば『チェックボックスが押されたら動く』の設定ができるよ」
+💬え！！**やってみよう！**
+
+### 2. マウスイベントを利用して、チェックボックスが押された時点で実行させる
+マウスイベントについて）https://web-designer.cman.jp/javascript_ref/event/mouse/
+チェックボックスのイベント一覧）https://kosapi.com/post-4146/
+複数のチェックボックスでイベントを用いる方法）https://1-notes.com/javascript-checkbox-event/
+
+#### ※注意！
+```
+document.getElementsByClassName('chk')[0].onclick = () => {
+ console.log(on);
+};
+```
+💭これだとなんでか反応しない…
+💬「多分`.onclick`なんかのイベントをつける前に、その前の`document.get...`を定義しないといけないんだよね」
+```
+const chkSec = document.getElementsByClassName('chk')[0];
+  chkSec.onclick = () => {
+    console.log(1);
+  };
+```
+💬動いた！！
