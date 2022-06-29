@@ -71,29 +71,35 @@ header h2 {
   });
 
 
-  //↓オブジェクトのループ処理
+  //▼オブジェクトのループ処理
+  //eventInfoは以下のプロパティを持ったオブジェクトと設定
   const eventInfo = {
     title: '「ごうさんとあそぼ」',
     actor: 'GO皆川',
     place:'ティアラこうとう',
-    detail: 'GO皆川が踊ります',
+    details: 'GO皆川がいます',
   }
 
-  //const keys = Object.keys(eventInfo);
-  //keys.forEach((key) => {
-  //  console.log(eventInfo[key]);
-  //});
-
+  //keysはebentInfoのプロパティの配列
+  //keysの配列通りプロパティの中身をコンソールログしなさい
+  const keys = Object.keys(eventInfo);
   keys.forEach((key) => {
-    document.getElementById('title').textContent = eventInfo[key];
+    console.log(eventInfo[key]);
   });
 
-  document.getElementById('title').textContent; = eventInfo.title;
-  document.getElementById('actor').textContent; = eventInfo.actor;
-  document.getElementById('place').textContent; = eventInfo.place;
-  document.getElementById('detail').textContent; = eventInfo.detail;
+keys.forEach((key) => {
+  document.getElementById(key).textContent = eventInfo[key];
+});
+
+//document.getElementById('title').textContent = eventInfo.title;
+//document.getElementById('actor').textContent = eventInfo.actor;
+//document.getElementById('place').textContent = eventInfo.place;
+//document.getElementById('details').textContent = eventInfo.details;
 
 
-</script>
+
+
+
+ </script>
 </body>
 </html>

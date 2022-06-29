@@ -44,19 +44,25 @@ header h2 {
   </div>
 </header>
 <main class="container">
+  お名前：<input type="text" class="form" />ご年齢：<input type="number" class="form" />
+  <button id="button">入会</button>
 </main>
 <script>
-  'use strict';
+ 'use strict';
+ // document.getElementById('button').onclick = () => {
+ //   window.alert('押しましたね')
+ // };
 
-  const person = {
-    name: 'John',
-    age: 23,
-    country:'India'
-  };
-
-  console.log(person.country);
-  console.log(person.name);
-  console.log(person['country'])
+ document.getElementById('button').onclick = () => {
+  const name = document.getElementsByClassName('form')[0].value;
+  const age = document.getElementsByClassName('form')[1].value;
+  //もしボタンが押されたときにボックスが一つでも空だったら
+  //アラートが表示され、手続きが進まない
+  if (name === '' || age === '') {
+    window.alert("空文字です");
+  } else {
+  window.alert(`${name}さん ${age}歳、入会ありがとうございます！`);
+};};
 
 </script>
 </body>
