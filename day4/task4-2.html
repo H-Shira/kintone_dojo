@@ -68,11 +68,14 @@ header h2 {
 </main>
 <script>
 
+  //const chkSec = document.getElementsByClassName('chk')[0];
+  //const chkDisk = document.getElementsByClassName('chk')[1];
+  //const slctSec = document.getElementsByClassName('slct')[0];
+  //const slctDisk = document.getElementsByClassName('slct')[1];
+
   const btn = document.getElementById('btn');
-  const chkSec = document.getElementsByClassName('chk')[0];
-  const chkDisk = document.getElementsByClassName('chk')[1];
-  const slctSec = document.getElementsByClassName('slct')[0];
-  const slctDisk = document.getElementsByClassName('slct')[1];
+  const chkArry = document.getElementsByClassName('chk')
+  const slctArry = document.getElementsByClassName('slct')
 
   let priceSec = 0;
   let priceDisk = 0;
@@ -85,21 +88,18 @@ header h2 {
   //priceに3900 + priceSec + priceDiskしたら完了
 
   btn.onclick = () => {
-    if (chkSec.checked) {
-      priceSec = slctSec.value * chkSec.value
-      document.getElementById('price').textContent = 3900 + priceSec + priceDisk
+    if (chkArry[0].checked) {
+      priceSec = slctArry[0].value * chkArry[0].value;
     } else {
-      priceSec = 0
-      document.getElementById('price').textContent = 3900 + priceSec + priceDisk
-    };
+      priceSec = 0;
+    }
 
-    if (chkDisk.checked) {
-      priceDisk = slctDisk.value * chkDisk.value
-      document.getElementById('price').textContent = 3900 + priceSec + priceDisk
+    if (chkArry[1].checked) {
+      priceDisk = slctArry[1].value * chkArry[1].value;
     } else {
-      priceDisk = 0
-      document.getElementById('price').textContent = 3900 + priceSec + priceDisk
-    };
+      priceDisk = 0;
+    }
+    document.getElementById('price').textContent = 3900 + priceSec + priceDisk;
   };
 
 </script>

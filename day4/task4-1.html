@@ -56,26 +56,26 @@ header h2 {
   let secure = 0;
   let disk = 0;
 
-  const chkSec = document.getElementsByClassName('chk')[0];
-  chkSec.onclick = () => {
-    if (chkSec.checked) {
-      secure = chkSec.value * 5
-      document.getElementById('price').textContent = 3900 + secure + disk
+  //const chkSec = document.getElementsByClassName('chk')[0];
+  //document.getElementsByClassName('chk')を[1]と[2]で２回繰り返してるのでまとめる
+  const chkArry = document.getElementsByClassName('chk');
+  chkArry[0].onclick = () => {
+    if (chkArry[0].checked) {
+      secure = chkArry[0].value * 5;
     } else {
-      secure = 0
-      document.getElementById('price').textContent = 3900 + secure + disk
-    };
+      secure = 0;
+    }
+    document.getElementById('price').textContent = 3900 + secure + disk;
   };
 
-  const chkDisk = document.getElementsByClassName('chk')[1];
-  chkDisk.onclick = () => {
-    if (chkDisk.checked) {
-      disk = chkDisk.value * 1
-      document.getElementById('price').textContent = 3900 + secure + disk
+  //const chkDisk = document.getElementsByClassName('chk')[1];
+  chkArry[1].onclick = () => {
+    if (chkArry[1].checked) {
+      disk = chkArry[1].value * 1;
     } else {
-      disk = 0
-      document.getElementById('price').textContent = 3900 + secure + disk
-    };
+      disk = 0;
+    }
+    document.getElementById('price').textContent = 3900 + secure + disk;
   };
 
 </script>
