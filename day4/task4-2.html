@@ -67,7 +67,40 @@ header h2 {
   <button id="btn">計算</button>
 </main>
 <script>
-  // ここに処理を記載する
+
+  //const chkSec = document.getElementsByClassName('chk')[0];
+  //const chkDisk = document.getElementsByClassName('chk')[1];
+  //const slctSec = document.getElementsByClassName('slct')[0];
+  //const slctDisk = document.getElementsByClassName('slct')[1];
+
+  const btn = document.getElementById('btn');
+  const chkArry = document.getElementsByClassName('chk')
+  const slctArry = document.getElementsByClassName('slct')
+
+  let priceSec = 0;
+  let priceDisk = 0;
+
+  //btnが押されたら
+  //slctのチェック状況を確認して
+  //チェックされていれば下記の要領で計算する
+   //priceSec = slctSec.value * chkSec.value
+   //priceDisk = slctDisk.value * chkDisk.value
+  //priceに3900 + priceSec + priceDiskしたら完了
+
+  btn.onclick = () => {
+    if (chkArry[0].checked) {
+      priceSec = slctArry[0].value * chkArry[0].value;
+    } else {
+      priceSec = 0;
+    }
+
+    if (chkArry[1].checked) {
+      priceDisk = slctArry[1].value * chkArry[1].value;
+    } else {
+      priceDisk = 0;
+    }
+    document.getElementById('price').textContent = 3900 + priceSec + priceDisk;
+  };
 
 </script>
 </body>

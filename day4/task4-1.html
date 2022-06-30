@@ -52,19 +52,31 @@ header h2 {
 </main>
 <script>
   'use strict';
-  //chkがチェックされたらチェックされた項目のvaluesを取り出す
-  //変数secure = chk[0]がチェックされたらvalue*5、されなかったら0
-  //変数disk = chk[1]がチェックされたらvalue、されなかったら0
-  //変数Newprice = 3900 + secure + disk
-  //チェックボックスに一つでもチェックが入った段階でpriceにNewpriceを書き換え
 
-  
+  let secure = 0;
+  let disk = 0;
 
-//document.getElementsByClassName('chk')[0].checked = () => {
-//  const secure = document.getElementsByClassName('chk')[0].value;
-//  cpnsole.log(secure);
-//  document.getElementById('price').textContent = 3900 + secure;
-//};
+  //const chkSec = document.getElementsByClassName('chk')[0];
+  //document.getElementsByClassName('chk')を[1]と[2]で２回繰り返してるのでまとめる
+  const chkArry = document.getElementsByClassName('chk');
+  chkArry[0].onclick = () => {
+    if (chkArry[0].checked) {
+      secure = chkArry[0].value * 5;
+    } else {
+      secure = 0;
+    }
+    document.getElementById('price').textContent = 3900 + secure + disk;
+  };
+
+  //const chkDisk = document.getElementsByClassName('chk')[1];
+  chkArry[1].onclick = () => {
+    if (chkArry[1].checked) {
+      disk = chkArry[1].value * 1;
+    } else {
+      disk = 0;
+    }
+    document.getElementById('price').textContent = 3900 + secure + disk;
+  };
 
 </script>
 </body>
