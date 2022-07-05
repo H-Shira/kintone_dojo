@@ -77,6 +77,7 @@ kintone.events.on('app.record.create.change.重複禁止項目_自動計算', (e
 ### 重複禁止項目_文字列フィールドを編集不可にする
 参考）https://developer.cybozu.io/hc/ja/articles/201941984-%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%89%E8%BF%BD%E5%8A%A0%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88#step5
 
-
+# レビュー
+- イベントを配列として書くと、編集時の動作が同じ場合にまとめて作動させることができる。
 
 
