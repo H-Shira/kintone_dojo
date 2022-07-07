@@ -14,22 +14,25 @@
 
             //action5の選択肢を取り出す
             //action5の選択肢を配列にする
-            const action5 =resp.properties.Table.fields.Action5.options;
-            console.log(action5);
-
-            const action5Array = Object.keys(action5);
-            console.log(action5Array);
-
-            const action5Array2 = Object.entries(action5);
-            console.log(action5Array2);
-            
-            const action5Array3 = action5Array.forEach(() => {
-                
+            const fetchedActionFiveObj =resp.properties.Table.fields.Action5.options;
+            /**
+             * {
+             *  あくなき探求: {
+             *    index: 0,
+             *    label: "あくなき探求"
+             *  }
+             * }
+             */
+            const actionFiveList = [];
+            Object.keys(fetchedActionFiveObj).forEach((key) => {
+                // actionFiveListのインデックス指定したところにフェッチしたアクション5の名前を代入
+                actionFiveList[fetchedActionFiveObj[key].index] = fetchedActionFiveObj[key].label
+                // actionFiveList 
+                // ["あくなき探求", "不屈の身体"]
             })
 
             //acton5Arrayをドロップダウンに詰め込んで全種類pushする
-            action5Array.forEach((title) => {
-
+            actionFiveList.forEach((title) => {
                 event.record.Table.value.push({
                     value: {
                         Action5: {type: 'DROP_DOWN', value: title},
