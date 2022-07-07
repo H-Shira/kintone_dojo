@@ -11,5 +11,9 @@
 ※注意
 ![image](https://user-images.githubusercontent.com/107820348/177480112-e4760c51-9c08-4b63-ae3a-2f522624340e.png)
 
-## 1. 重複禁止項目の文字列を取得
-参考）https://developer.cybozu.io/hc/ja/articles/204783170
+## 2. 取得した文字列がこれまでの重複禁止項目と被ってないか確認
+### レコードの重複禁止項目の値を取得
+参考）https://developer.cybozu.io/hc/ja/articles/202331474#step2
+
+### 配列のうちの一つでも条件に重なっていないかを確認
+
