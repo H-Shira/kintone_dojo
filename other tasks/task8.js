@@ -17,15 +17,14 @@
             const action5 =resp.properties.Table.fields.Action5.options;
             console.log(action5);
 
-            const action5Array = Object.keys(action5);
-            console.log(action5Array);
+            //const action5Array = Object.keys(action5);
+            //console.log(action5Array);
 
-            const action5Array2 = Object.entries(action5);
-            console.log(action5Array2);
-            
-            const action5Array3 = action5Array.forEach(() => {
-                
-            })
+            const action5Array = [];
+            Object.keys(action5).forEach((key) => {
+                action5Array[action5[key].index] = key
+            });
+            console.log(action5Array);
 
             //acton5Arrayをドロップダウンに詰め込んで全種類pushする
             action5Array.forEach((title) => {
