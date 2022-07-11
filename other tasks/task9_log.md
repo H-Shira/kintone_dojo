@@ -49,7 +49,7 @@ https://developer.cybozu.io/hc/ja/articles/204695384-%E7%AC%AC12%E5%9B%9E-jQuery
 
 💭やっぱりうまく動かない…
 
-# レビュー
+# 質問会
 💬「多分関数の階層が違うから取り出せない」
 💬「これをうまくいかせるなら、クエリーで重複したデータだけ取り出して…が一番いい」
 「クエリーの書き方はクセがある。テンプレートリテラル（文字列）や https://developer.cybozu.io/hc/ja/articles/900001057206-kintone-API-%E3%81%AE%E3%82%AF%E3%82%A8%E3%83%AA%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%81%AE%E5%9F%BA%E6%9C%AC を確認して書いた方がいいよ」
@@ -74,3 +74,7 @@ https://developer.cybozu.io/hc/ja/articles/204695384-%E7%AC%AC12%E5%9B%9E-jQuery
 - https://developer.cybozu.io/hc/ja/articles/202166310
 
 **ちゃんと読む！！！**
+
+#　レビュー
+- 同一アプリ内であれば`kintone.app.getId()`でIDを取り出す（具体的なIDを指定しない）。
+- ifの外側のとじかっこに;は不要。
