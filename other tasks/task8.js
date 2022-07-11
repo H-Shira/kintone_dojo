@@ -14,9 +14,6 @@
       const action5 =resp.properties.Table.fields.Action5.options;
       event.record.Table.value = [];
 
-      //const action5Array = Object.keys(action5);
-      //console.log(action5Array);
-
       const action5Array = [];
       Object.keys(action5).forEach((key) => {
         action5Array[action5[key].index] = key
