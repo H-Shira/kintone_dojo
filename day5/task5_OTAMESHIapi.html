@@ -35,7 +35,6 @@
         font-weight: 400;
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="task5.css">
 </head>
 <body>
     <header>
@@ -45,8 +44,19 @@
         </div>
     </header>
     <main class="container">
-    </main>
-    <script src="./task5.js"></script>
-    <script></script>
+        <div>
+            ボックスに郵便番号を入れてください（数字のみ７桁）
+            <input type="number" id="number">
+            <button id="btn">push</button></div>
+        </main>
+    <script>
+        'use strict';
+
+        document.getElementById('btn').onclick = () => {
+            const postCode = document.getElementById('number').value;
+            //console.log(postCode);
+        };
+
+    </script>
 </body>
 </html>
