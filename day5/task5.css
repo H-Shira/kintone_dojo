@@ -1,0 +1,33 @@
+html {
+	font-size: 16px;
+}
+
+table{
+    border-collapse: collapse;
+    border-color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+}
+th,td {
+    border-color: #000000;
+	border: solid 1px;
+    padding: 1rem;
+}
+.Blue {
+    border-color: #000000;
+    color: #FFFFFF;
+    background-color: #3F7C85;
+    text-align: center;
+}
+.Green{
+    border-color: #000000;
+    color: #FFFFFF;
+    background-color: #00CCBF;
+    text-align: center;
+}
+.Red{
+    border-color: #000000;
+    color: #FFFFFF;
+    background-color: #FF5F5D;
+    text-align: center;
+}
