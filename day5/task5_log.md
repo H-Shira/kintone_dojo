@@ -152,3 +152,8 @@ const td2nd = document.createElement('td')
 const td3rd = document.createElement('td')
 ```
 ▲これはうまく行った！！！
+
+# レビュー
+- if文の中に;必要、外側には不要！
+- if のelseの中にifを使いたい時は、`else if`を用いる
+- `HTML要素名.classList.add('')`でHTML要素にclassを追加できるが（`classlist`を変えればあらゆる属性を追加できる）`('A', 'B')`って感じで並列で同じ要素をどんどん追加していくことができる。

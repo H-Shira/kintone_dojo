@@ -13,21 +13,17 @@ th,td {
 	border: solid 1px;
     padding: 1rem;
 }
-.Blue {
+.labels{
     border-color: #000000;
     color: #FFFFFF;
-    background-color: #3F7C85;
     text-align: center;
+}
+.Blue {
+    background-color: #3F7C85;
 }
 .Green{
-    border-color: #000000;
-    color: #FFFFFF;
     background-color: #00CCBF;
-    text-align: center;
 }
 .Red{
-    border-color: #000000;
-    color: #FFFFFF;
     background-color: #FF5F5D;
-    text-align: center;
 }

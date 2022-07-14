@@ -30,10 +30,12 @@
 
         //labelごとに異なるclassを設定する
         if (label === 'company') {
-          tdCategory.classList.add('Blue')
-        } else {if (label === 'product') {
-          tdCategory.classList.add('Green')
-        } else {tdCategory.classList.add('Red')}};
+          tdCategory.classList.add('labels', 'Blue');
+        } else if (label === 'product') {
+          tdCategory.classList.add('labels', 'Green');
+        } else {
+          tdCategory.classList.add('labels', 'Red');
+        }
 
         tr.appendChild(tdCategory);
 
@@ -44,7 +46,6 @@
         contentLink.innerText = content;
         tdContent.appendChild(contentLink);
         tr.appendChild(tdContent);
-        //document.write(content.link(url));
 
         tbl.appendChild(tr);
       });
