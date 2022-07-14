@@ -3,6 +3,9 @@
   
     kintone.events.on(['app.record.create.submit', 'app.record.edit.submit'], (event) => {
     //kintone.events.on(['app.record.create.show', 'app.record.edit.show'], (event) => {
+      
+      //"eventTyp" = イベントタイプ
+      const eventType = event.type;
       //"uniqueName" = 現在のレコードの重複禁止項目の値
       const uniqueName = event.record.重複禁止項目.value;
       //"recordId" = 現在のレコードのレコードIDを取得
@@ -10,26 +13,40 @@
       console.log(recordId);
       
   
-      //"uniqueName"と重複する重複禁止項目値を持ったレコードだけを抽出
-      const params = {
+      //createの時のparms
+      const paramsCreate = {
+        'fields': '重複禁止項目',
         'app': kintone.app.getId(),
         'query': `重複禁止項目 = "${uniqueName}" `
       };
-  
-      //「"uniqueName"と重複する重複禁止項目値を持ったレコードが存在していれば」の条件づけ
-      return kintone.api(kintone.api.url('/k/v1/records.json', true), 'GET', params).then((resp) => {
-        console.log(resp);
-        const otherRecordId = resp.records[0].$id.value;
-        console.log(otherRecordId);
-  
-        if (resp.records.length !== 0) {
-          if (otherRecordId !== recordId) {
+      //editの時のparms
+      const paramsEdit = {
+        'app': kintone.app.getId(),
+        'query': `重複禁止項目 = "${uniqueName}" `
+      };
+      
+      //createの時の条件文
+      if (eventType === "app.record.create.show") {
+        return kintone.api(kintone.api.url('/k/v1/records.json', true), 'GET', paramsCreate).then((resp) => {
+          if (resp.records.length !== 0) {
             const response = confirm('レコードが重複しています。このまま保存しますか？');
             if (response === false) {
               return false;
             }
           }
-        }
-      });
+        })
+      } else {
+        return kintone.api(kintone.api.url('/k/v1/records.json', true), 'GET', paramsEdit).then((resp) => {
+          const otherRecordId = resp.records[0].$id.value;
+          if (resp.records.length !== 0) {
+            if (therRecordId !== recordId) {
+              const response = confirm('レコードが重複しています。このまま保存しますか？');
+              if (response === false) {
+                return false;
+              }
+            }
+          }
+        })
+      }
     });
   })();
