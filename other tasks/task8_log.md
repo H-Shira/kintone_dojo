@@ -124,3 +124,7 @@ Object.entriesは全てを配列にしてしまう。
 配列は挿入したタイミングがバラバラでも`配列名[index番号] = ~`でちゃんと挿入してたら、配列を再度呼び出したときにきちんと並び順になってる！
 
 ![image](https://user-images.githubusercontent.com/107820348/177715742-a6e266ae-1f14-4f9c-aeea-fa09de5ef092.png)
+
+# レビュー
+現在のappIDはコマンドで取得できる。
+`kintone.app.getId()`
