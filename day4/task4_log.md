@@ -58,3 +58,17 @@ const chkSec = document.getElementsByClassName('chk')[0];
   };
 ```
 💬動いた！！
+
+# レビュー
+## task4-1
+- if文でtrue,falseそれぞれで同じ文が入っているなら、if外で一回書くので済む。
+- if内に;(セミコロン)は必要。でもifの末尾に;は不要(わかりにくい…)
+- `const chkSec = document.getElementsByClassName('chk')[0]; /// const chkDisk = document.getElementsByClassName('chk')[1];` より、
+`const chkArry = document.getElementsByClassName('chk'); /// chArry[0] /// chArry[1]` の方が簡潔（idでなくクラスの場合はこう書く！）。
+- 簡単なif文は三項演算子だと簡潔に書ける。
+```
+chkSec.onclick = () => {
+    secure = chkSec.checked ? chkSec.value * 5 : 0;  // chkSec.checkedがtrueなら「:」の左の値、falseなら右の値になる
+    document.getElementById('price').textContent = 3900 + secure + disk;
+  };
+  ```
