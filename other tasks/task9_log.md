@@ -75,6 +75,12 @@ https://developer.cybozu.io/hc/ja/articles/204695384-%E7%AC%AC12%E5%9B%9E-jQuery
 
 **ちゃんと読む！！！**
 
-#　レビュー
+# レビュー
 - 同一アプリ内であれば`kintone.app.getId()`でIDを取り出す（具体的なIDを指定しない）。
 - ifの外側のとじかっこに;は不要。
+- queryの書き方
+![image](https://user-images.githubusercontent.com/107820348/178901094-f24f320e-03c8-4815-b088-ea30270c8bda.png)
+
+## テンプレートリテラルとは
+参考）https://www.javadrive.jp/javascript/string/index5.html
+> テンプレートリテラルは文字列を表す方法のひとつで文字の並びをバッククォーテーション(`)で囲って記述します。テンプレートリテラルでは改行文字をそのまま改行として入力できるほかに文字列の中に式や変数の値を埋め込むことができます。
