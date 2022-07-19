@@ -80,6 +80,8 @@ https://developer.cybozu.io/hc/ja/articles/204695384-%E7%AC%AC12%E5%9B%9E-jQuery
 - ifの外側のとじかっこに;は不要。
 - queryの書き方
 ![image](https://user-images.githubusercontent.com/107820348/178901094-f24f320e-03c8-4815-b088-ea30270c8bda.png)
+- 再編集時、重複するレコードのlengthは「自分のレコードのみの場合（つまり他に重複するレコードがない場合）」でも「一つだけ重複するレコードが他にある場合」でも『1』になる！（なぜ！？）
+だから前者を除くために、queryでうまく指定しないといけない。
 
 ## テンプレートリテラルとは
 参考）https://www.javadrive.jp/javascript/string/index5.html
